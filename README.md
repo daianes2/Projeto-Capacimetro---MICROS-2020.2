@@ -20,6 +20,7 @@ Diagrama de blocos:
  O diagrama de blocos mostrado resume como se deram as conexões ao longo de todo o circuito. Começando pelo LM 555, como já foi dito, o sinal pulsante de saída do pino 3 é conectado à porta PA8 do microprocessador STM32, onde o código contido nesse dispositivo vai realizar os cálculos necessários para determinar a capacitância medida (através dos dados de frequência e resistências). Em sequência, os pinos PB6 e PB7 do microprocessador, são conectados ao pinos de entrada do I2C, que são os pinos de interface SCL e SDA. Por fim, no circuito I2c, que realiza a interface entre o STM e o LCD, temos a conexão dos pinos de saída P0 a P7, com exceção ao pino P3 que não foi utilizado, aos pinos RW, RS, E e D4 a D7 (já que somente 4 bits foram utilizados).
 
 Esquemático no PROTEUS:
+
 ![image](https://user-images.githubusercontent.com/80993989/114303248-8cf2c800-9aa3-11eb-970d-0a7092d5c6af.png)
 
 Todos os pinos de saída mencionados no diagrama de blocos de cada elemento estão conectados aos respectivos pinos de entrada do próximo componente. 
@@ -29,6 +30,7 @@ I2C:
 Os pinos de entrada do I2C, A0,A1 e A2 são os pinos de endereçamento, foram todos colocados em nível ALTO, por isso estão conectados ao VCC. Inicia apenas transmissão de dados para o LCD, que é o mestre, pois o objetivo é a escrita no endereço (4E).
 
 STM32F103C6 no CUBEIDE32:
+
 ![image](https://user-images.githubusercontent.com/80993989/114303285-b4499500-9aa3-11eb-8cdd-391ac67152ff.png)
 
 O pino de entrada corresponde ao PA8, que foi configurado como TIMER para obter os valores do tempo de subida e de descida. No caso, utiliza-se dois canais, um como Input Capture direct mode (para o tempo no alto) e o outro como Input Capture indirect mode (para o tempo no baixo). Os pinos PB6 E PB7 como saídas, que foram configurados, respectivamente, como SCL e SDA. O clock habilitado e configurado nos pinos PD0 e PD1, o qual utiliza-se o periférico RCC. Por fim, PA13 e PA14 foram configurados para habilitar o periférico SYS para setar os pinos de gravação.

@@ -12,10 +12,11 @@ No LCD utilizado, pode-se observar os pinos que vao ser conectados do I2C para o
 Desenvolvimento
 
 Diagrama de blocos:
-! [imagem] (https://user-images.githubusercontent.com/80993989/114303196-5157fe00-9aa3-11eb-9f43-149da652e944.png)
+![image](https://user-images.githubusercontent.com/80993989/114303452-93ce0a80-9aa4-11eb-9429-c8fcd3fa273a.png)
 
 
-	O diagrama de blocos mostrado resume como se deram as conexões ao longo de todo o circuito. Começando pelo LM 555, como já foi dito, o sinal pulsante de saída do pino 3 é conectado à porta PA8 do microprocessador STM32, onde o código contido nesse dispositivo vai realizar os cálculos necessários para determinar a capacitância medida (através dos dados de frequência e resistências). Em sequência, os pinos PB6 e PB7 do microprocessador, são conectados ao pinos de entrada do I2C, que são os pinos de interface SCL e SDA. Por fim, no circuito I2c, que realiza a interface entre o STM e o LCD, temos a conexão dos pinos de saída P0 a P7, com exceção ao pino P3 que não foi utilizado, aos pinos RW, RS, E e D4 a D7 (já que somente 4 bits foram utilizados).
+
+ diagrama de blocos mostrado resume como se deram as conexões ao longo de todo o circuito. Começando pelo LM 555, como já foi dito, o sinal pulsante de saída do pino 3 é conectado à porta PA8 do microprocessador STM32, onde o código contido nesse dispositivo vai realizar os cálculos necessários para determinar a capacitância medida (através dos dados de frequência e resistências). Em sequência, os pinos PB6 e PB7 do microprocessador, são conectados ao pinos de entrada do I2C, que são os pinos de interface SCL e SDA. Por fim, no circuito I2c, que realiza a interface entre o STM e o LCD, temos a conexão dos pinos de saída P0 a P7, com exceção ao pino P3 que não foi utilizado, aos pinos RW, RS, E e D4 a D7 (já que somente 4 bits foram utilizados).
 
 Esquemático no PROTEUS:
 ![image](https://user-images.githubusercontent.com/80993989/114303248-8cf2c800-9aa3-11eb-970d-0a7092d5c6af.png)

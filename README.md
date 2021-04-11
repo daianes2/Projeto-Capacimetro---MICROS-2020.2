@@ -31,6 +31,7 @@ Os pinos de entrada do I2C, A0,A1 e A2 são os pinos de endereçamento, foram to
 
 STM32F103C6 no CUBEIDE32:
 
+
 ![image](https://user-images.githubusercontent.com/80993989/114303285-b4499500-9aa3-11eb-8cdd-391ac67152ff.png)
 
 O pino de entrada corresponde ao PA8, que foi configurado como TIMER para obter os valores do tempo de subida e de descida. No caso, utiliza-se dois canais, um como Input Capture direct mode (para o tempo no alto) e o outro como Input Capture indirect mode (para o tempo no baixo). Os pinos PB6 E PB7 como saídas, que foram configurados, respectivamente, como SCL e SDA. O clock habilitado e configurado nos pinos PD0 e PD1, o qual utiliza-se o periférico RCC. Por fim, PA13 e PA14 foram configurados para habilitar o periférico SYS para setar os pinos de gravação.
